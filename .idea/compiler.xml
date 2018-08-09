@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="api_main" target="1.8" />
       <module name="api_test" target="1.8" />
+      <module name="dao_main" target="1.8" />
+      <module name="dao_test" target="1.8" />
       <module name="web_main" target="1.8" />
       <module name="web_test" target="1.8" />
     </bytecodeTargetLevel>
