@@ -1,11 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="Gradle : cn.com.wx.detail : web-1.0-SNAPSHOT.war">
+  <artifact type="war" name="Gradle : cn.com.wx.detai : web-1.0-SNAPSHOT.war">
     <output-path>$PROJECT_DIR$/web/build/libs</output-path>
     <properties id="gradle-properties">
       <options external-project-path="$PROJECT_DIR$/web" />
     </properties>
     <root id="archive" name="web-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="Gradle : cn.com.wx.detail : web-1.0-SNAPSHOT.war (exploded)" />
+      <element id="artifact" artifact-name="Gradle : cn.com.wx.detai : web-1.0-SNAPSHOT.war (exploded)" />
     </root>
   </artifact>
 </component>

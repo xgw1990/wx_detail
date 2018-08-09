@@ -8,15 +8,16 @@ package cn.com.detail.wx.entity;
  * @Descriphion:
  */
 
-@Entiry
+@Entity
 public class User {
 
     public String name;
 
-    public String pwd;
+    public byte sex;
 
     public int age;
 
     public String telPhone;
 
+    public String pwd;
 }
