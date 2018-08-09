@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twelvemonkeys.imageio:imageio-tga:3.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-tga/3.3.2/9e005ffeb818a6c00546c90c37b4c3186b743651/imageio-tga-3.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-tga/3.3.2/d49eab4ef6330fd5036290f0a44f998ddb7f2af1/imageio-tga-3.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

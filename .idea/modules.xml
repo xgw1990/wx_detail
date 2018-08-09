@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" group="api" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/api_main.iml" group="api" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_test.iml" filepath="$PROJECT_DIR$/.idea/modules/api_test.iml" group="api" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao.iml" filepath="$PROJECT_DIR$/.idea/modules/dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao.iml" filepath="$PROJECT_DIR$/.idea/modules/dao.iml" group="dao" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_main.iml" group="dao" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_test.iml" group="dao" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/wx_detail.iml" />

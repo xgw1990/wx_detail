@@ -1,16 +1,27 @@
-plugins {
-    id 'java'
+ext.deploySvrRole = 'api'
+ext.moduleName = 'api'
+
+ext.executable = "ats_$moduleName"
+ext.startScript = "ats_$moduleName"+"_svr"
+
+jar {
+//    archiveName = "ats-$moduleName-$mainVersion.$extension"
 }
 
-group 'cn.com.wx.detai'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+startScripts.applicationName = executable
+//startScripts.defaultJvmOpts.add("-Dserver.port=$httpPort")
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':dao')
+
+}
+
+mainClassName = 'com.atsoa.AtsApiServer'
+
+manifest {
+    attributes 'Main-Class': 'com.atsoa.AtsApiServer'
+}
+
+if (project.hasProperty("jmx_host")) {
+    startScripts.defaultJvmOpts.add("-Dcom.sun.management.jmxremote.port=$jmx_api_port")
 }

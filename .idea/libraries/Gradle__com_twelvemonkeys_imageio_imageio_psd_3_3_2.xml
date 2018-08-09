@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twelvemonkeys.imageio:imageio-psd:3.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-psd/3.3.2/8e48850d64d2e42401bd54d24947358b9c774a25/imageio-psd-3.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-psd/3.3.2/eb88d63cf4da6908b443010426bbdb3229eddcdd/imageio-psd-3.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

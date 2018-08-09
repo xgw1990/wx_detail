@@ -1,7 +1,13 @@
 package cn.com.detail.wx;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -11,13 +17,17 @@ import javafx.stage.Stage;
  * @Descriphion:
  */
 
+@SpringBootApplication
+@EnableJpaRepositories(basePackages = "cn.com.detail.wx")
+@EntityScan(basePackages = "com.atsoa.model")
+@EnableScheduling
+@EnableCaching
+public class ApiLanchPad {
 
-@Component
-public class ApiLanchPad extends Application {
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    private final static Logger log = LoggerFactory.getLogger(ApiLanchPad.class);
 
-        Application.launch();
+    public static void main(String[] args) {
+        SpringApplication.run(ApiLanchPad.class, args);
     }
 
 }
