@@ -1,4 +1,4 @@
-package cn.com.detail.wx.entity;
+package cn.com.detail.wx.model.entity;
 
 
 import javax.persistence.Column;

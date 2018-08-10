@@ -1,5 +1,7 @@
 package cn.com.detail.wx.action;
 
+import org.springframework.stereotype.Controller;
+
 /**
  * Created by Administrator on 2018/8/9.
  *
@@ -8,7 +10,11 @@ package cn.com.detail.wx.action;
  * @Descriphion:
  */
 
-@Controller("")
+@Controller("/login")
 public class LogInAction {
+
+    public void getLogIn(){
+
+    }
 
 }

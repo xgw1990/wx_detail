@@ -19,7 +19,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "cn.com.detail.wx")
-@EntityScan(basePackages = "com.atsoa.model")
+@EntityScan(basePackages = "cn.com.detail.wx.model")
 @EnableScheduling
 @EnableCaching
 public class ApiLanchPad {
