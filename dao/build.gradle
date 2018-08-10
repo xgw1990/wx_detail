@@ -1,8 +1,8 @@
-ext.deploySvrRole = 'dao'
+ext.deploySvrRole = 'svr_dao'
 ext.moduleName = 'dao'
 
-ext.executable = "ats_$moduleName"
-ext.startScript = "ats_$moduleName"+"_svr"
+ext.executable = "wx_$moduleName"
+ext.startScript = "wx_$moduleName"+"_svr"
 
 jar {
 //    archiveName = "ats-$moduleName-$mainVersion.$extension"
@@ -35,7 +35,7 @@ dependencies {
 
     compile 'net.sf.ehcache:ehcache-core:2.6.11'
 //    compile 'au.com.datasymphony:EasyFlow:1.3.1'
-    compile 'com.github.hank-cp:EasyFlow:1.3.3'
+//    compile 'com.github.hank-cp:EasyFlow:1.3.3'
 
     compile 'com.twelvemonkeys.imageio:imageio-pdf:3.3.2'
     compile 'com.twelvemonkeys.imageio:imageio-psd:3.3.2'

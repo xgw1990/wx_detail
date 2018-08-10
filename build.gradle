@@ -42,6 +42,14 @@ subprojects {
         maven { url 'https://artifacts.alfresco.com/nexus/content/repositories/public' }
     }
 
+//    ext {
+//        junitVersion = "4.11"
+//        springVersion = "4.3.3.RELEASE"
+//        jacksonVersion = "2.4.4"
+//        compileJava.options.encoding = 'UTF-8'
+//        compileTestJava.options.encoding = 'UTF-8'
+//    }
+
     apply plugin: 'java'
     apply plugin: 'application'
     apply plugin: 'spring-boot'

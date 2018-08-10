@@ -1,8 +1,8 @@
-ext.deploySvrRole = 'api'
+ext.deploySvrRole = 'svr_api'
 ext.moduleName = 'api'
 
-ext.executable = "ats_$moduleName"
-ext.startScript = "ats_$moduleName"+"_svr"
+ext.executable = "wx_$moduleName"
+ext.startScript = "wx_$moduleName"+"_svr"
 
 jar {
 //    archiveName = "ats-$moduleName-$mainVersion.$extension"
