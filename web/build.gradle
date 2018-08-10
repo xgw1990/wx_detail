@@ -1,18 +1,76 @@
-plugins {
-    id 'java'
-    id 'war'
+
+ext.deploySvrRole = 'web'
+ext.moduleName = 'web'
+
+ext.executable = "ats_$moduleName"
+ext.startScript = "ats_$moduleName"+"_svr"
+
+jar {
+//    archiveName = "ats-$moduleName-$mainVersion.$extension"
 }
 
-group 'cn.com.wx.detai'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+startScripts.applicationName = executable
+//startScripts.defaultJvmOpts.add("-Dserver.port=$httpPort")
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project(':dao')
+
+    compile "org.springframework.boot:spring-boot-starter-freemarker"
+    compile "org.jxls:jxls-poi:1.0.11"
+
+    compile "com.itextpdf:itextpdf:5.5.8"
+    compile "com.itextpdf.tool:xmlworker:5.5.8"
+    compile 'org.imgscalr:imgscalr-lib:4.2'
+    compile "net.glxn.qrgen:javase:2.0"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile "org.springframework.boot:spring-boot-starter-freemarker"
+}
+
+mainClassName = 'com.atsoa.AtsWebServer'
+
+manifest {
+    attributes 'Main-Class': 'com.atsoa.AtsWebServer'
+}
+
+if (project.hasProperty("jmx_host")) {
+    startScripts.defaultJvmOpts.add("-Dcom.sun.management.jmxremote.port=$jmx_web_port")
+}
+
+task deployExcelTplToServer(dependsOn:jar) << {
+    println "$buildDir/resources/main/application.properties"
+
+    Properties appProp = new Properties()
+    appProp.load(file("$buildDir/resources/main/application.properties").newDataInputStream())
+    def excelHome = appProp.getProperty('com.ats.erp.excel-template-home', null)
+    println "!!!!!! Deploy excel_template to $excelHome !!!!!!"
+
+    ssh.run {
+        session(remotes.role(deploySvrRole)) {
+            execute('mkdir tmp', ignoreError: true)
+            put('excel_template', 'tmp')
+            execute("cp -r tmp/excel_template/* $excelHome")
+            execute('rm -rf tmp')
+        }
+    }
+}
+
+task fixSchemaVersion(dependsOn: processResources) << {
+    Properties appProp = new Properties()
+    appProp.load(file("$buildDir/resources/main/application.properties").newDataInputStream())
+    // HARD CODE relpace "localhost" to target host
+    def dbUrl = appProp.getProperty("spring.datasource.url").replaceAll("localhost", "$svr_web_host")
+    println "!!!!!! Fixing flyway schema_version on $dbUrl !!!!!!"
+
+    flyway {
+        url = dbUrl
+        user = appProp.getProperty("spring.datasource.username")
+        password = appProp.getProperty("spring.datasource.password")
+        driver = appProp.getProperty("spring.datasource.driver-class-name")
+//        locations = ['classpath:db_migration']
+        locations = ['filesystem:module_shared/src/main/resources/db_migration']
+    }
+
+    flywayRepair.execute()
+    flywayInfo.execute()
 }

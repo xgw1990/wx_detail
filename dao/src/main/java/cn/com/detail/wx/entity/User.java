@@ -1,5 +1,11 @@
 package cn.com.detail.wx.entity;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by Administrator on 2018/8/9.
  *
@@ -9,15 +15,17 @@ package cn.com.detail.wx.entity;
  */
 
 @Entity
+@Table(name = "user")
 public class User {
 
+    @NotNull
+    @Column(nullable = false)
     public String name;
 
-    public byte sex;
+    public String pwd;
 
     public int age;
 
     public String telPhone;
 
-    public String pwd;
 }

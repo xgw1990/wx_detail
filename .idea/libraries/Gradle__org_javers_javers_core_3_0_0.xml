@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.javers:javers-core:3.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javers/javers-core/3.0.0/fef2f9435509db4ac404dda9c334e87bc76201d9/javers-core-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javers/javers-core/3.0.0/1b555afb82a53453fc2a140b215bf08a0e1482dc/javers-core-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

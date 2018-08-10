@@ -1,2 +1,4 @@
-rootProject.name = 'api'
+include 'api',
+        'web',
+        'dao'
 
