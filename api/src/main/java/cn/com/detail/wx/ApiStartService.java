@@ -22,12 +22,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EntityScan(basePackages = "cn.com.detail.wx.model")
 @EnableScheduling
 @EnableCaching
-public class ApiLanchPad {
+public class ApiStartService {
 
-    private final static Logger log = LoggerFactory.getLogger(ApiLanchPad.class);
+    private final static Logger log = LoggerFactory.getLogger(ApiStartService.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiLanchPad.class, args);
+        SpringApplication.run(ApiStartService.class, args);
     }
 
 }

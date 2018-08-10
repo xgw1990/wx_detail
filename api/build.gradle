@@ -16,10 +16,10 @@ dependencies {
 
 }
 
-mainClassName = 'com.atsoa.AtsApiServer'
+mainClassName = 'cn.com.detail.wx.ApiStartService'
 
 manifest {
-    attributes 'Main-Class': 'com.atsoa.AtsApiServer'
+    attributes 'Main-Class': 'cn.com.detail.wx.ApiStartService'
 }
 
 if (project.hasProperty("jmx_host")) {
