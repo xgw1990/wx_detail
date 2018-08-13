@@ -36,7 +36,6 @@
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Gradle: uk.com.robust-it:cloning:1.9.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:18.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.flywaydb:flyway-core:4.0.3" level="project" />
     <orderEntry type="library" name="Gradle: org.imgscalr:imgscalr-lib:4.2" level="project" />
     <orderEntry type="library" name="Gradle: org.javers:javers-core:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.ehcache:ehcache-core:2.6.11" level="project" />

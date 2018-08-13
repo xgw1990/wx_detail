@@ -1,6 +1,7 @@
 package cn.com.detail.wx.action;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -10,11 +11,12 @@ import org.springframework.stereotype.Controller;
  * @Descriphion:
  */
 
-@Controller("/login")
+@Controller()
 public class LogInAction {
 
-    public void getLogIn(){
-
+    @RequestMapping("/login")
+    public String getLogIn(){
+        return "index";
     }
 
 }

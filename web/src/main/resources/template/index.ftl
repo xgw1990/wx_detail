@@ -4,6 +4,6 @@
     <title>$Title$</title>
 </head>
 <body>
-$END$
+My spring boot project.
 </body>
 </html>
