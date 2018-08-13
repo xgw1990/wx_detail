@@ -1,22 +1,17 @@
-ext.deploySvrRole = 'svr_api'
-ext.moduleName = 'api'
+apply plugin: 'application'
 
-ext.executable = "wx_$moduleName"
-ext.startScript = "wx_$moduleName"+"_svr"
+group = "cn.com.detail.wx"
+version = "${rootProject.version}" //也可以不写，默认继承父模块 version
+description = "this is gradle api module"
+archivesBaseName = 'api'
 
-jar {
-//    archiveName = "ats-$moduleName-$mainVersion.$extension"
-}
+mainClassName = 'cn.com.detail.wx.ApiStartService'
 
-startScripts.applicationName = executable
-//startScripts.defaultJvmOpts.add("-Dserver.port=$httpPort")
 
 dependencies {
     compile project(':dao')
 
 }
-
-mainClassName = 'cn.com.detail.wx.ApiStartService'
 
 manifest {
     attributes 'Main-Class': 'cn.com.detail.wx.ApiStartService'

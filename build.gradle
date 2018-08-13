@@ -6,6 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE"
+//        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE"
         classpath 'org.hidetake:gradle-ssh-plugin:1.1.3'
     }
 
@@ -33,7 +34,6 @@ idea {
 //*************************************************************************
 // Sub Project Config
 //*************************************************************************
-
 subprojects {
     repositories {
         jcenter()
@@ -42,18 +42,11 @@ subprojects {
         maven { url 'https://artifacts.alfresco.com/nexus/content/repositories/public' }
     }
 
-//    ext {
-//        junitVersion = "4.11"
-//        springVersion = "4.3.3.RELEASE"
-//        jacksonVersion = "2.4.4"
-//        compileJava.options.encoding = 'UTF-8'
-//        compileTestJava.options.encoding = 'UTF-8'
-//    }
-
     apply plugin: 'java'
     apply plugin: 'application'
+//    apply plugin: 'maven'
     apply plugin: 'spring-boot'
-    apply plugin: 'net.saliman.properties'
+//    apply plugin: 'net.saliman.properties'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -74,13 +67,13 @@ subprojects {
         testLogging.showStandardStreams = true
     }
 
-    bootRun {
-        jvmArgs = ["-Dfile.encoding=UTF-8", "-Dserver.port=8080"]
-    }
-
-    bootRepackage {
-        excludeDevtools = true
-    }
+//    bootRun {
+//        jvmArgs = ["-Dfile.encoding=UTF-8", "-Dserver.port=8080"]
+//    }
+//
+//    bootRepackage {
+//        excludeDevtools = true
+//    }
 
 //*************************************************************************
 // Resource Processing
@@ -103,49 +96,6 @@ subprojects {
     processResources.duplicatesStrategy = DuplicatesStrategy.WARN
     processResources << {
         loadEnvResources.execute()
-    }
-
-//*************************************************************************
-// Deployment
-//*************************************************************************
-
-    task deployToServer(dependsOn: jar) << {
-        println "!!!!!!Deploy $jar.archiveName to $startScriptPath!!!!!!"
-
-        ssh.run {
-            session(remotes.role(deploySvrRole)) {
-                if (project.hasProperty("run_me_before_deploy") && run_me_before_deploy?.trim()) {
-                    execute("$run_me_before_deploy", ignoreError: true)
-                }
-                // upload svr jar
-                put(jar.archivePath.absolutePath, jar.archiveName)
-                execute("mv $jar.archiveName $deployPath/lib/")
-                // upload shared jar
-                put(project(':module_shared').jar.archivePath.absolutePath,
-                        project(':module_shared').jar.archiveName)
-                execute("mv "+project(':module_shared').jar.archiveName+" $deployPath/lib/")
-                execute("$startScriptPath restart", ignoreError: true)
-            }
-        }
-    }
-
-    task deployAllToServer(dependsOn: distZip) << {
-        ext.unzipName = distZip.archiveName.substring(0, distZip.archiveName.length() - 4)
-        println "!!!!!!Deploy $unzipName to $startScriptPath!!!!!!"
-
-        ssh.run {
-            session(remotes.role(deploySvrRole)) {
-                execute("$startScriptPath stop", ignoreError: true)
-                put(distZip.archivePath.absolutePath, distZip.archiveName)
-                execute("mkdirs $deploy_home", ignoreError: true)
-                execute('unzip -o ' + distZip.archiveName + ' -d ' + deploy_home)
-                execute("rm -f $deployPath")
-                execute("ln -sf $deploy_home$unzipName $deployPath")
-                execute("rm $deployPath/lib/spring-boot-devtools*.jar") // exclude is not work
-                execute("sed -i 's/svrStatusPort=.*/svrStatusPort=$httpPort/' $startScriptPath")
-                execute("$startScriptPath restart", ignoreError: true)
-            }
-        }
     }
 
 //*************************************************************************
