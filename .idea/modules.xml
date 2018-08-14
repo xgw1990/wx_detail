@@ -12,7 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/wx_detail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail.iml" />
     </modules>
   </component>
 </project>

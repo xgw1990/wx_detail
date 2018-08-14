@@ -5,9 +5,9 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by Administrator on 2018/8/10.
@@ -17,17 +17,22 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Descriphion:
  */
 
-//@ComponentScan("cn.com.detail.wx")
 @ImportAutoConfiguration
 @SpringBootConfiguration
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "cn.com.detail.wx")
 @EntityScan(basePackages = "cn.com.detail.wx.model")
-@EnableScheduling
-@EnableCaching
-public class WebStartService {
+//@EnableScheduling
+//@EnableCaching
+public class WebStartService extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(WebStartService.class,args);
     }
+
+    @Override
+    protected final SpringApplicationBuilder configure(final SpringApplicationBuilder application) {
+        return application.sources(WebStartService.class);
+    }
+
 }

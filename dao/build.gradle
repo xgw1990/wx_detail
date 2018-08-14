@@ -5,6 +5,12 @@ version = "${rootProject.version}" //也可以不写，默认继承父模块 ver
 description = "this is gradle dao module"
 archivesBaseName = 'dao'
 
+mainClassName = 'cn.com.detail.wx.Application'
+
+manifest {
+    attributes 'Main-Class': 'cn.com.detail.wx.Application'
+}
+
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-aop"

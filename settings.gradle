@@ -1,3 +1,4 @@
+rootProject.name = 'wx_detail'
 include 'api',
         'web',
         'dao'

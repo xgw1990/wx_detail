@@ -5,9 +5,9 @@ buildscript {
         maven { url 'http://repo.spring.io/plugins-release' }
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE"
 //        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE"
-        classpath 'org.hidetake:gradle-ssh-plugin:1.1.3'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE"
+        classpath 'org.hidetake:gradle-ssh-plugin:2.9.0'
     }
 
 }
@@ -45,8 +45,8 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'application'
 //    apply plugin: 'maven'
-    apply plugin: 'spring-boot'
-//    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
 //    apply plugin: 'io.spring.dependency-management'
     apply plugin: 'net.saliman.properties'
 
@@ -85,7 +85,7 @@ subprojects {
         def envResDir = file("src/main/environment/$environmentName")
         if (!envResDir.exists()) println "!!!!!!Environment: $environmentName is not existed in $project.name!!!!!!"
         else {
-            println "!!!!!!Target environment: $environmentName for $project.name!!!!!!"
+            println "!!!!!!Target environment: $environmentName for $project.name!!!!!! to $buildDir/resources/main"
 
             copy {
                 from envResDir
@@ -119,6 +119,6 @@ subprojects {
         startScripts.defaultJvmOpts.add("-Djava.rmi.server.hostname=$jmx_host")
     }
 
-    applicationDistribution.exclude('**/spring-boot-devtools*.jar')
+//    applicationDistribution.exclude('**/spring-boot-devtools*.jar')
 
 }
