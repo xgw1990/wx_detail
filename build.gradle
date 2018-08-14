@@ -119,6 +119,6 @@ subprojects {
         startScripts.defaultJvmOpts.add("-Djava.rmi.server.hostname=$jmx_host")
     }
 
-//    applicationDistribution.exclude('**/spring-boot-devtools*.jar')
+    applicationDistribution.exclude('**/spring-boot-devtools*.jar')
 
 }
