@@ -12,9 +12,9 @@ buildscript {
 
 }
 
-plugins {
-    id 'net.saliman.properties' version '1.4.6'
-}
+//plugins {
+//    id 'net.saliman.properties' version '1.4.6'
+//}
 
 apply plugin: 'org.hidetake.ssh'
 
@@ -48,7 +48,7 @@ subprojects {
 //    apply plugin: 'spring-boot'
     apply plugin: 'org.springframework.boot'
 //    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'net.saliman.properties'
+//    apply plugin: 'net.saliman.properties'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -62,7 +62,7 @@ subprojects {
 
     jar {
         manifest.attributes provider: 'gradle'
-        exclude("db_testdata")
+//        exclude("db_testdata")
     }
 
     test {
@@ -81,24 +81,24 @@ subprojects {
 // Resource Processing
 //*************************************************************************
 
-    task loadEnvResources << {
-        def envResDir = file("src/main/environment/$environmentName")
-        if (!envResDir.exists()) println "!!!!!!Environment: $environmentName is not existed in $project.name!!!!!!"
-        else {
-            println "!!!!!!Target environment: $environmentName for $project.name!!!!!! to $buildDir/resources/main"
+//    task loadEnvResources << {
+//        def envResDir = file("src/main/environment/$environmentName")
+//        if (!envResDir.exists()) println "!!!!!!Environment: $environmentName is not existed in $project.name!!!!!!"
+//        else {
+//            println "!!!!!!Target environment: $environmentName for $project.name!!!!!! to $buildDir/resources/main"
+//
+//            copy {
+//                from envResDir
+//                into "$buildDir/resources/main"
+//                include '**/*'
+//            }
+//        }
+//    }
 
-            copy {
-                from envResDir
-                into "$buildDir/resources/main"
-                include '**/*'
-            }
-        }
-    }
-
-    processResources.duplicatesStrategy = DuplicatesStrategy.WARN
-    processResources << {
-        loadEnvResources.execute()
-    }
+//    processResources.duplicatesStrategy = DuplicatesStrategy.WARN
+//    processResources << {
+//        loadEnvResources.execute()
+//    }
 
 //*************************************************************************
 // JVM Startup Arguments

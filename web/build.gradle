@@ -36,7 +36,7 @@ dependencies {
 //
 //    Properties appProp = new Properties()
 //    appProp.load(file("$buildDir/resources/main/application.properties").newDataInputStream())
-//    def excelHome = appProp.getProperty('com.ats.erp.excel-template-home', null)
+//    def excelHome = appProp.getProperty('com.ats.erp.excel-templates-home', null)
 //    println "!!!!!! Deploy excel_template to $excelHome !!!!!!"
 //
 //    ssh.run {
@@ -62,7 +62,7 @@ dependencies {
 //        password = appProp.getProperty("spring.datasource.password")
 //        driver = appProp.getProperty("spring.datasource.driver-class-name")
 ////        locations = ['classpath:db_migration']
-//        locations = ['filesystem:module_shared/src/main/resources/db_migration']
+////        locations = ['filesystem:module_shared/src/main/resources/db_migration']
 //    }
 //
 //    flywayRepair.execute()
