@@ -3,14 +3,15 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/wx_detai?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: '0214'
+    password: 'root'
 
   jpa:
-    database: mysql
+#    database: mysql
     hibernate:
       ddl-auto: create-drop
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
 
 # 关闭springBoot的安全验证
 security:
