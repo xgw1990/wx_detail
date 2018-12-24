@@ -1,5 +1,7 @@
-package cn.com.detail.wx.model.entity;
+package cn.com.detail.wx.model.user;
 
+
+import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,20 +12,14 @@ import java.io.Serializable;
 
 /**
  * Created by Administrator on 2018/8/9.
- *
  * @Author: xgw
  * @Date: 2018/8/9 18:51
- * @Descriphion:
+ * @Descriphion:  用户表
  */
 
 @Entity
 @Table(name = "user")
-public class User implements Serializable {
-
-    @Id
-    @NotNull
-    @Column(name = "id",nullable = false)
-    public String id;
+public class User extends BaseEntity {
 
     @NotNull
     @Column(name = "name",nullable = false)
@@ -32,19 +28,8 @@ public class User implements Serializable {
     @Column(name = "pwd")
     private String pwd;
 
-    @Column(name = "age")
-    private int age;
-
     @Column(name = "telPhone")
     private String telPhone;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -60,14 +45,6 @@ public class User implements Serializable {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getTelPhone() {

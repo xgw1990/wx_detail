@@ -1,6 +1,6 @@
 package cn.com.detail.wx.utils;
 
-import cn.com.detail.wx.model.entity.User;
+import cn.com.detail.wx.model.user.User;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

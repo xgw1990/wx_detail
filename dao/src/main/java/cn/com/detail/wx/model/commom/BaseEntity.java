@@ -51,25 +51,9 @@ public class BaseEntity implements Serializable, Cloneable {
 
     @JsonIgnore
     @DiffIgnore
-    @CreatedBy
-    public String createdBy;
-
-    @JsonIgnore
-    @DiffIgnore
     @CreatedDate
     @Type(type="datetime")
     public DateTime createdDate;
-
-    @JsonIgnore
-    @DiffIgnore
-    @LastModifiedBy
-    public String updatedBy;
-
-    @JsonIgnore
-    @DiffIgnore
-    @LastModifiedDate
-    @Type(type="datetime")
-    public DateTime updatedDate;
 
     @JsonIgnore
     @DiffIgnore

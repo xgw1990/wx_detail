@@ -1,6 +1,7 @@
 package cn.com.detail.wx.model.card;
 
 
+import cn.com.detail.wx.model.commom.BaseEntity;
 import org.joda.time.DateTime;
 
 import javax.persistence.Column;
@@ -15,18 +16,12 @@ import java.io.Serializable;
  *
  * @Author: xgw
  * @Date: 2018/8/9 18:51
- * @Descriphion:
+ * @Descriphion:  优惠券
  */
 
 @Entity
 @Table(name = "card")
-public class Card implements Serializable {
-
-    @Id
-    @NotNull
-    @Column(name = "id",nullable = false)
-    public String id;
-
+public class CouponCard extends BaseEntity {
     @Column(name = "number")
     public String number;
 
@@ -36,11 +31,10 @@ public class Card implements Serializable {
     @Column(name = "startDate")
     public DateTime startDate;
 
-    public String getId() {
-        return id;
-    }
+    private int status;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    private int sum;
+
+    private int leftCount;
+
 }

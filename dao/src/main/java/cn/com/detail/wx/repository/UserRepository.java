@@ -1,6 +1,6 @@
 package cn.com.detail.wx.repository;
 
-import cn.com.detail.wx.model.entity.User;
+import cn.com.detail.wx.model.user.User;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 

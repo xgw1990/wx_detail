@@ -1,13 +1,12 @@
 package cn.com.detail.wx.action;
 
-import cn.com.detail.wx.model.entity.User;
+import cn.com.detail.wx.model.user.User;
 import cn.com.detail.wx.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.beans.Transient;
 
@@ -28,7 +27,7 @@ public class LogInAction {
     @RequestMapping(value = "/login")
     public String getLogIn(){
         User user = userRepository.findById("1");
-        System.out.println("the user is :"+user.getAge()+user.getName());
+        System.out.println("the user is :"+user.getName());
         return "index";
     }
 
@@ -41,13 +40,12 @@ public class LogInAction {
 
         System.out.println(name + pwd + age + telPhone);
         User user = new User();
-        user.setAge(age);
         user.setName(name);
         user.setPwd(pwd);
         user.setTelPhone(telPhone);
         userRepository.save(user);
 
-        System.out.println("the user is :"+user.getAge()+user.getName());
+        System.out.println("the user is :"+user.getTelPhone()+user.getName());
         return "comm/success";
     }
 
