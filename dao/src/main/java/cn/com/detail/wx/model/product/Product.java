@@ -4,7 +4,6 @@ import cn.com.detail.wx.model.card.CouponLink;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 
 /**
 * @Description:    产品表
@@ -22,6 +21,10 @@ public class Product extends BaseEntity {
      * 产品名称
      */
     public String name;
+    /**
+     * 产品图片
+     */
+    public String picture;
     /**
      * 产品类别
      */

@@ -1,4 +1,4 @@
-package cn.com.detail.wx.action;
+package cn.com.detail.wx.action.orders;
 
 import cn.com.detail.wx.model.user.User;
 import cn.com.detail.wx.repository.UserRepository;
@@ -19,7 +19,7 @@ import java.beans.Transient;
  */
 
 @Controller()
-public class LogInAction {
+public class OrderControllerAction {
 
     @Autowired
     private UserRepository userRepository;
@@ -27,7 +27,7 @@ public class LogInAction {
     @RequestMapping(value = "/login")
     public String getLogIn(){
         User user = userRepository.findById("1");
-        System.out.println("the user is :"+user.getName());
+        System.out.println("the user is :"+user.name);
         return "index";
     }
 
@@ -40,12 +40,12 @@ public class LogInAction {
 
         System.out.println(name + pwd + age + telPhone);
         User user = new User();
-        user.setName(name);
-        user.setPwd(pwd);
-        user.setTelPhone(telPhone);
+        user.name = name;
+        user.pwd = pwd;
+        user.telPhone = telPhone;
         userRepository.save(user);
 
-        System.out.println("the user is :"+user.getTelPhone()+user.getName());
+        System.out.println("the user is :"+user.telPhone +user.name);
         return "comm/success";
     }
 

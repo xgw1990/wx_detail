@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "card")
+//@Table(name = "card")
 public class CouponCard extends BaseEntity {
     @Column(name = "number")
     public String number;
@@ -31,10 +31,10 @@ public class CouponCard extends BaseEntity {
     @Column(name = "startDate")
     public DateTime startDate;
 
-    private int status;
+    public int status;
 
-    private int sum;
+    public int sum;
 
-    private int leftCount;
+    public int leftCount;
 
 }

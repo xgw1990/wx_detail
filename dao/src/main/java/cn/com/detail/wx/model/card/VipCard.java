@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * @Date: 2018/8/9 18:51
  */
 @Entity
-@Table(name = "card")
+//@Table(name = "card")
 public class VipCard extends BaseEntity {
     @Column(name = "number")
     public String number;
@@ -25,10 +25,10 @@ public class VipCard extends BaseEntity {
     @Column(name = "startDate")
     public DateTime startDate;
 
-    private int status;
+    public int status;
 
-    private int level;
+    public int level;
 
-    private String memo;
+    public String memo;
 
 }

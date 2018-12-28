@@ -23,35 +23,12 @@ public class User extends BaseEntity {
 
     @NotNull
     @Column(name = "name",nullable = false)
-    private String name;
+    public String name;
 
     @Column(name = "pwd")
-    private String pwd;
+    public String pwd;
 
     @Column(name = "telPhone")
-    private String telPhone;
+    public String telPhone;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    public String getTelPhone() {
-        return telPhone;
-    }
-
-    public void setTelPhone(String telPhone) {
-        this.telPhone = telPhone;
-    }
 }

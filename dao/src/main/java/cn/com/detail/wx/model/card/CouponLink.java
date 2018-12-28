@@ -27,7 +27,7 @@ public class CouponLink extends BaseEntity {
     @Column(name = "startDate")
     public DateTime startDate;
 
-    private int typeKey;
+    public int typeKey;
 
     public CouponCard couponCard;
 

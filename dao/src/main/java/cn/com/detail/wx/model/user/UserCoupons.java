@@ -1,8 +1,11 @@
 package cn.com.detail.wx.model.user;
 
+import cn.com.detail.wx.model.card.CouponCard;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 /**
 * @Description:    用户的优惠券表
@@ -15,4 +18,6 @@ public class UserCoupons extends BaseEntity {
 
     public String memo;
 
+    @ManyToMany
+    public List<CouponCard> userCoupon;
 }

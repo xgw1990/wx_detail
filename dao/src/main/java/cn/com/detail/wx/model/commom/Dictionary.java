@@ -25,5 +25,5 @@ public class Dictionary extends BaseEntity {
     /**
      * 字典说明
      */
-    private String memo;
+    public String memo;
 }

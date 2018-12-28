@@ -4,6 +4,7 @@ import cn.com.detail.wx.model.commom.BaseEntity;
 import cn.com.detail.wx.model.user.User;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -17,12 +18,12 @@ public class ShopCart extends BaseEntity {
     /**
      * 用户
      */
-    @OneToMany
+    @ManyToOne
     public User user;
     /**
      * 产品
      */
-    @OneToMany
+    @ManyToOne
     public Product product;
     /**
      * 产品数量
