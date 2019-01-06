@@ -13,39 +13,33 @@
 <body>
 
 <script>
-    function commitRegister() {
-
+    function commitProduct() {
+        return;
     }
+
 </script>
 
 <div class="container">
     <div class="page-header"><h1>Sprint Boot: Register</h1></div>
-    <form action="/login/confirm" method="post">
+    <form action="/product/upload" method="post">
         <div class="form-group">
-
-        </div>
-        <div class="form-group">
-            <label for="name">姓名</label>
+            <label for="name">产品名称</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
             <small id="nameHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="age">年龄</label>
+            <label for="age">产品编号</label>
             <input type="text" class="form-control" id="age" name="age" placeholder="age">
         </div>
         <div class="form-group">
-            <label for="telPhone">电话</label>
+            <label for="telPhone">产品图片</label>
             <input type="tel" class="form-control" id="telPhone" name="telPhone" placeholder="telPhone">
         </div>
         <div class="form-group">
-            <label for="pwd">密码</label>
+            <label for="pwd">产品类别</label>
             <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
         </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary" onsubmit="commitRegister()">提交</button>
+        <button type="submit" class="btn btn-primary" onsubmit="commitProduct()">提交</button>
     </form>
 
 </div>

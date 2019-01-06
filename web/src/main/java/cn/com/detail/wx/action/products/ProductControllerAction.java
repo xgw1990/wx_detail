@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.beans.Transient;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -30,9 +33,19 @@ public class ProductControllerAction {
 
     @RequestMapping(value = "/product")
     public String getLogIn(){
-        User user = userRepository.findById("1");
+        User user = userRepository.findById(1l);
         System.out.println("the user is :"+user.name);
         return "product/index";
+    }
+    @RequestMapping(value = "/product/search")
+    public @ResponseBody Map<String, Object> productSearch(@RequestParam (required = false) String name,
+                                                           @RequestParam (required = false) Long id){
+        Map<String,Object> result = new HashMap<>();
+        User user = userRepository.findById(id);
+        System.out.println("the user is :"+user.name);
+        result.put("result",user);
+        result.put("errNum",0);
+        return result;
     }
 
     @Transient
@@ -46,7 +59,7 @@ public class ProductControllerAction {
         product.name = name;
         product.picture = picture;
 
-        productRepository.findById("1l");
+        productRepository.findById(1l);
 
         productRepository.save(product);
 

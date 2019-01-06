@@ -24,14 +24,14 @@ public class CouponControllerAction {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/coupon")
     public String getLogIn(){
-        User user = userRepository.findById("1");
+        User user = userRepository.findById(1l);
         System.out.println("the user is :"+user.name);
         return "index";
     }
 
-    @RequestMapping(value = "/login/confirm",method = RequestMethod.POST)
+    @RequestMapping(value = "/coupon/confirm",method = RequestMethod.POST)
     @Transient
     public String login(@RequestParam(required = false) String name,
                         @RequestParam(required = false) Integer age,
