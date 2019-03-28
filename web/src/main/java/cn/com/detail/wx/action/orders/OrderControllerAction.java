@@ -26,7 +26,7 @@ public class OrderControllerAction {
 
     @RequestMapping(value = "/order")
     public String getLogIn(){
-        User user = userRepository.findById("1");
+        User user = userRepository.findById(1l);
         System.out.println("the user is :"+user.name);
         return "index";
     }
