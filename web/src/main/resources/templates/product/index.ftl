@@ -13,9 +13,10 @@
 <body>
 
 <script>
-    function commitRegister() {
-
+    function commitProduct() {
+        return;
     }
+
 </script>
 
 <div class="container">
@@ -34,10 +35,14 @@
             <input type="text" class="form-control" id="number" name="number" placeholder="number">
         </div>
         <div class="form-group">
+            <label for="pwd">产品类别</label>
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+        </div>
+
+        <div class="form-group">
             <label for="telPhone">产品图片</label>
             <input type="file" multiple class="file-loading" class="form-control" id="picture" name="picture" placeholder="picture">
         </div>
-
         <form>
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg" role="document">

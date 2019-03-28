@@ -11,7 +11,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @Date: 2018/8/10 14:36
  * @Descriphion:
  */
-public interface CardRepository extends PagingAndSortingRepository<User, String>, JpaSpecificationExecutor<User> //JpaRepository<CouponCard, String>
+public interface CardRepository extends PagingAndSortingRepository<User, Long>, JpaSpecificationExecutor<User> //JpaRepository<CouponCard, String>
 {
 
 //    User findById(String id);

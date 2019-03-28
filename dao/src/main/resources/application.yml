@@ -8,7 +8,8 @@ spring:
   jpa:
 #    database: mysql
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+#      ddl-auto: create-drop
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
@@ -18,3 +19,9 @@ security:
   basic:
     enabled: false
 
+FTP:
+  ADDRESS: 120.234.32.67
+  PORT: 52020
+  USERNAME: gps_lhk
+  PASSWORD: lhk#783
+  BASEPATH: /temp/images

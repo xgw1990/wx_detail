@@ -11,8 +11,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @Date: 2018/8/10 14:36
  * @Descriphion:
  */
-public interface UserRepository extends PagingAndSortingRepository<User , String>,JpaSpecificationExecutor<User> {
+public interface UserRepository extends PagingAndSortingRepository<User , Long>,JpaSpecificationExecutor<User> {
 
-    User findById(String id);  //JpaRepository<User , String>
+    User findById(Long id);  //JpaRepository<User , String>
 
 }
