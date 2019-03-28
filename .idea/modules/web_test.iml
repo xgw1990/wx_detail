@@ -16,14 +16,15 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../web/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../web/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../web/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="web_main" />
     <orderEntry type="module" module-name="dao_main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-freemarker:1.5.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.imgscalr:imgscalr-lib:4.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.ant:ant-commons-net:1.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.imgscalr:imgscalr-lib:4.2" level="project" />
     <orderEntry type="library" name="Gradle: net.glxn.qrgen:javase:2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.8.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE" level="project" />

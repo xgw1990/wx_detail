@@ -20,31 +20,40 @@
 
 <div class="container">
     <div class="page-header"><h1>Sprint Boot: Register</h1></div>
-    <form action="/login/confirm" method="post">
+    <form action="/product/upload/confirm" method="post">
         <div class="form-group">
 
         </div>
         <div class="form-group">
-            <label for="name">姓名</label>
+            <label for="name">产品名称</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
             <small id="nameHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="age">年龄</label>
-            <input type="text" class="form-control" id="age" name="age" placeholder="age">
+            <label for="number">产品编号</label>
+            <input type="text" class="form-control" id="number" name="number" placeholder="number">
         </div>
         <div class="form-group">
-            <label for="telPhone">电话</label>
-            <input type="tel" class="form-control" id="telPhone" name="telPhone" placeholder="telPhone">
+            <label for="telPhone">产品图片</label>
+            <input type="file" multiple class="file-loading" class="form-control" id="picture" name="picture" placeholder="picture">
         </div>
-        <div class="form-group">
-            <label for="pwd">密码</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
+
+        <form>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
+                        </div>
+                        <div class="modal-body">
+                            <a class="form-control" style="border:none;">下载导入模板</a>
+                            <input type="file" name="txt_file" id="txt_file" multiple class="file-loading" />
+                        </div></div>
+                </div>
+            </div>
+        </form>
+
         <button type="submit" class="btn btn-primary" onsubmit="commitRegister()">提交</button>
     </form>
 
