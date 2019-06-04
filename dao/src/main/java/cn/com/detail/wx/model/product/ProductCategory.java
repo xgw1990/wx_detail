@@ -4,6 +4,7 @@ import cn.com.detail.wx.model.card.CouponLink;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,6 +27,7 @@ public class ProductCategory extends BaseEntity {
     /**
      * 优惠券信息 todo
      */
+    @ManyToOne
     public CouponLink couponLink;
 
 }

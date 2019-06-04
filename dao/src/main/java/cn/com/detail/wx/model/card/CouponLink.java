@@ -2,10 +2,12 @@ package cn.com.detail.wx.model.card;
 
 
 import cn.com.detail.wx.model.commom.BaseEntity;
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -25,10 +27,12 @@ public class CouponLink extends BaseEntity {
     public int valueDate;
 
     @Column(name = "startDate")
+    @Type(type = "datetime")
     public DateTime startDate;
 
     public int typeKey;
 
+    @ManyToOne
     public CouponCard couponCard;
 
     public long linkTypeId;

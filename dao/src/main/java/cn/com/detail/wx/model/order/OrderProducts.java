@@ -3,6 +3,7 @@ package cn.com.detail.wx.model.order;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,5 +22,6 @@ public class OrderProducts extends BaseEntity {
 
     public String address;
 
+    @ManyToOne
     public Order order;
 }
