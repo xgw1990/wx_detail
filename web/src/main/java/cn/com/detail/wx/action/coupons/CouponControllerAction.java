@@ -1,6 +1,6 @@
 package cn.com.detail.wx.action.coupons;
 
-import cn.com.detail.wx.model.user.User;
+import cn.com.detail.wx.model.user.Customer;
 import cn.com.detail.wx.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +26,8 @@ public class CouponControllerAction {
 
     @RequestMapping(value = "/coupon")
     public String getLogIn(){
-        User user = userRepository.findById(1l);
-        System.out.println("the user is :"+user.name);
+        Customer customer = userRepository.findById(1l);
+        System.out.println("the customer is :"+ customer.name);
         return "index";
     }
 
@@ -39,13 +39,13 @@ public class CouponControllerAction {
                         @RequestParam(required = false) String telPhone){
 
         System.out.println(name + pwd + age + telPhone);
-        User user = new User();
-        user.name = name;
-        user.pwd = pwd;
-        user.telPhone = telPhone;
-        userRepository.save(user);
+        Customer customer = new Customer();
+        customer.name = name;
+        customer.pwd = pwd;
+        customer.telPhone = telPhone;
+        userRepository.save(customer);
 
-        System.out.println("the user is :"+user.telPhone +user.name);
+        System.out.println("the customer is :"+ customer.telPhone + customer.name);
         return "comm/success";
     }
 

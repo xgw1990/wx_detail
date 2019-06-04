@@ -1,7 +1,7 @@
 package cn.com.detail.wx.action.products;
 
 import cn.com.detail.wx.model.product.Product;
-import cn.com.detail.wx.model.user.User;
+import cn.com.detail.wx.model.user.Customer;
 import cn.com.detail.wx.repository.ProductRepository;
 import cn.com.detail.wx.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,17 +33,17 @@ public class ProductControllerAction {
 
     @RequestMapping(value = "/product")
     public String getLogIn(){
-        User user = userRepository.findById(1l);
-        System.out.println("the user is :"+user.name);
+        Customer customer = userRepository.findById(1l);
+        System.out.println("the customer is :"+ customer.name);
         return "product/index";
     }
     @RequestMapping(value = "/product/search")
     public @ResponseBody Map<String, Object> productSearch(@RequestParam (required = false) String name,
                                                            @RequestParam (required = false) Long id){
         Map<String,Object> result = new HashMap<>();
-        User user = userRepository.findById(id);
-        System.out.println("the user is :"+user.name);
-        result.put("result",user);
+        Customer customer = userRepository.findById(id);
+        System.out.println("the customer is :"+ customer.name);
+        result.put("result", customer);
         result.put("errNum",0);
         return result;
     }
@@ -65,7 +65,7 @@ public class ProductControllerAction {
 
         System.out.println(name + picture + age + telPhone);
 
-        System.out.println("the user is :"+telPhone +name);
+        System.out.println("the customer is :"+telPhone +name);
         return "success";
     }
 

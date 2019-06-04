@@ -28,5 +28,4 @@ public class WebStartService {
         SpringApplication.run(WebStartService.class,args);
     }
 
-
 }
