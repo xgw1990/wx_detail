@@ -1,11 +1,12 @@
-package cn.com.detail.wx.model.product;
+package cn.com.detail.wx.model.user;
 
 import cn.com.detail.wx.model.commom.BaseEntity;
-import cn.com.detail.wx.model.user.User;
+import cn.com.detail.wx.model.product.Product;
+import cn.com.detail.wx.model.user.Customer;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
 * @Description:    产品购物车表
@@ -14,12 +15,13 @@ import javax.persistence.OneToMany;
 * @Version:        1.0
 */
 @Entity
+@Table(name = "c_shopCart")
 public class ShopCart extends BaseEntity {
     /**
      * 用户
      */
     @ManyToOne
-    public User user;
+    public Customer customer;
     /**
      * 产品
      */

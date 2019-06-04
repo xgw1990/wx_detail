@@ -1,8 +1,7 @@
-package cn.com.detail.wx.model.user;
-
-import cn.com.detail.wx.model.commom.BaseEntity;
+package cn.com.detail.wx.model.commom;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
 * @Description:    省份表
@@ -11,6 +10,7 @@ import javax.persistence.Entity;
 * @Version:        1.0
 */
 @Entity
+@Table(name = "s_province")
 public class Province extends BaseEntity {
 
     public String name;

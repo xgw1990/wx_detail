@@ -2,6 +2,7 @@ package cn.com.detail.wx.model.card;
 
 
 import cn.com.detail.wx.model.commom.BaseEntity;
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ import java.io.Serializable;
  */
 
 @Entity
-//@Table(name = "card")
+@Table(name = "t_couponCard")
 public class CouponCard extends BaseEntity {
     @Column(name = "number")
     public String number;
@@ -29,6 +30,7 @@ public class CouponCard extends BaseEntity {
     public int valueDate;
 
     @Column(name = "startDate")
+    @Type(type = "datetime")
     public DateTime startDate;
 
     public int status;

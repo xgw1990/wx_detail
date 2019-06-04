@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * @Date: 2018/8/9 18:51
  */
 @Entity
-//@Table(name = "card")
+@Table(name = "t_vipCard")
 public class VipCard extends BaseEntity {
     @Column(name = "number")
     public String number;

@@ -3,6 +3,8 @@ package cn.com.detail.wx.model.order;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
 * @Description:    订单表的产品表
 * @Author:         xgw
@@ -10,6 +12,7 @@ import javax.persistence.Entity;
 * @Version:        1.0
 */
 @Entity
+@Table(name = "o_orderProducts")
 public class OrderProducts extends BaseEntity {
 
     public String name;

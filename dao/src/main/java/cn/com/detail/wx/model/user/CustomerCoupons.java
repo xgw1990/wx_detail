@@ -5,6 +5,7 @@ import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -14,7 +15,8 @@ import java.util.List;
 * @Version:        1.0
 */
 @Entity
-public class UserCoupons extends BaseEntity {
+@Table(name = "c_customerCoupons")
+public class CustomerCoupons extends BaseEntity {
 
     public String memo;
 

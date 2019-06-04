@@ -4,6 +4,7 @@ import cn.com.detail.wx.model.card.CouponLink;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
 * @Description:    产品类别表
@@ -12,6 +13,7 @@ import javax.persistence.Entity;
 * @Version:        1.0
 */
 @Entity
+@Table(name = "p_category")
 public class ProductCategory extends BaseEntity {
     /**
      * 产品类别名

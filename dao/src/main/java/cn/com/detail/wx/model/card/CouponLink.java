@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "card")
+@Table(name = "t_couponLink")
 public class CouponLink extends BaseEntity {
 
     @Column(name = "number")

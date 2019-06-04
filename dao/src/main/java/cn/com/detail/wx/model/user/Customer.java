@@ -18,8 +18,8 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "user")
-public class User extends BaseEntity {
+@Table(name = "c_customer")
+public class Customer extends BaseEntity {
 
     @NotNull
     @Column(name = "name",nullable = false)

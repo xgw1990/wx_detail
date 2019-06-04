@@ -4,6 +4,7 @@ import cn.com.detail.wx.model.card.CouponLink;
 import cn.com.detail.wx.model.commom.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
 * @Description:    产品表
@@ -12,6 +13,7 @@ import javax.persistence.Entity;
 * @Version:        1.0
 */
 @Entity
+@Table(name = "p_product")
 public class Product extends BaseEntity {
     /**
      * 产品状态：0，未上线 1.在售 2，下架 4，缺货

@@ -1,6 +1,6 @@
 package cn.com.detail.wx.utils;
 
-import cn.com.detail.wx.model.user.User;
+import cn.com.detail.wx.model.user.Customer;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -40,12 +40,12 @@ public class ApplicationContextProvider implements ApplicationContextAware {
         }
     }
 
-    public static User getCurrentLoginAccount() {
+    public static Customer getCurrentLoginAccount() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User account = null;
+        Customer account = null;
         if (authentication != null && authentication.isAuthenticated()
-                && authentication.getPrincipal() instanceof User) {
-            account = (User) authentication.getPrincipal();
+                && authentication.getPrincipal() instanceof Customer) {
+            account = (Customer) authentication.getPrincipal();
         }
         return account;
     }
