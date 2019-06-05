@@ -3,8 +3,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/wx_detai?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: 'root'
-#    password: '0214'
+#    password: 'root'
+    password: '0214'
 
   jpa:
 #    database: mysql
