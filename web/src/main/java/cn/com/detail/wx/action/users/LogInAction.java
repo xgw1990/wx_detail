@@ -7,8 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.beans.Transient;
+
+import static cn.com.detail.wx.utils.CollectionUtil.entry;
+import static cn.com.detail.wx.utils.CollectionUtil.map;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -24,10 +28,19 @@ public class LogInAction {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * 品号管理列表
+     */
+    @RequestMapping("/login/product")
+    public ModelAndView list() {
+        return new ModelAndView("/product/list", map(entry("design", false)));
+    }
+
+
     @RequestMapping(value = "/login")
     public String getLogIn(){
-        Customer customer = userRepository.findById(1l);
-        System.out.println("the customer is :"+ customer.name);
+//        Customer customer = userRepository.findById(1l);
+//        System.out.println("the customer is :"+ customer.name);
         return "index";
     }
 
