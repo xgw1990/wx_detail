@@ -18,7 +18,7 @@
     <#--<link rel="stylesheet" media="screen" href="/stylesheets/jquery.contextMenu.min.css">-->
 
     <#--<link rel="stylesheet" media="screen" href="/stylesheets/main.css">-->
-
+    <#--<script src="/javascripts/jquery-ui-1.11.4.min.js" type="text/javascript"></script>-->
     <#--<script src="/javascripts/jquery-1.11.2.min.js" type="text/javascript"></script>-->
     <#--<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>-->
     <#--<script src="/javascripts/toastr.min.js" type="text/javascript"></script>-->
@@ -38,6 +38,7 @@
 
 </head>
 <body>
+<#--<#import "/spring.ftl" as spring />-->
 
 <script>
 
@@ -66,21 +67,27 @@
         <h1>Sprint Boot: Register</h1>
     </div>
 
-    <#-- common menu : left -->
     <div class="row">
+        <#-- common menu : left -->
         <div class="col-2">
             <div class="nav flex-column nav-pills" id="v-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-home-tab" data-toggle="pill" href="#v-home" role="tab" aria-controls="v-home" aria-selected="true">首页</a>
-                <a class="nav-link" id="v-product-tab" data-toggle="pill" href="#v-product" role="tab" aria-controls="v-product" aria-selected="false">商品</a>
+                <div>
+                    <a id="v-product-home" role="tab" aria-selected="false">商品</a>
+                    <a class="nav-link column-resize-line col-6" id="v-product-tab" data-toggle="pill" href="#v-product" role="tab" aria-controls="v-product" aria-selected="false">商品管理</a>
+                    <a class="nav-link column-resize-line col-6" id="v-category-tab" data-toggle="pill" href="#v-category" role="tab" aria-controls="v-category" aria-selected="false">分类管理</a>
+                </div>
                 <a class="nav-link" id="v-messages-tab" data-toggle="pill" href="#v-messages" role="tab" aria-controls="v-messages" aria-selected="false">订单</a>
                 <a class="nav-link" id="v-customer-tab" data-toggle="pill" href="#v-customer" role="tab" aria-controls="v-customer" aria-selected="false">客户</a>
                 <a class="nav-link" id="v-settings-tab" data-toggle="pill" href="#v-settings" role="tab" aria-controls="v-settings" aria-selected="false">设置</a>
             </div>
         </div>
+        <#-- content : right -->
         <div class="col-10">
             <div class="tab-content" id="v-tabContent">
                 <div class="tab-pane fade show active" id="v-home" role="tabpanel" aria-labelledby="v-home-tab" source="/login/home">首页</div>
-                <div class="tab-pane fade" id="v-product" role="tabpanel" aria-labelledby="v-product-tab" source="/login/product">商品</div>
+                <div class="tab-pane fade" id="v-product" role="tabpanel" aria-labelledby="v-product-tab" source="/login/product">商品管理</div>
+                <div class="tab-pane fade" id="v-category" role="tabpanel" aria-labelledby="v-category-tab" source="/login/category">分类管理</div>
                 <div class="tab-pane fade" id="v-messages" role="tabpanel" aria-labelledby="v-messages-tab" source="/login/messages">订单</div>
                 <div class="tab-pane fade" id="v-customer" role="tabpanel" aria-labelledby="v-customer-tab" source="/login/customer">客户</div>
                 <div class="tab-pane fade" id="v-settings" role="tabpanel" aria-labelledby="v-settings-tab" source="/login/settings">设置</div>
@@ -123,8 +130,8 @@
     <div class="container" align="right"><p class="text-muted">©2018 xgw</p></div>
 </footer>
 
-<#--<script src="//cdn.jsdelivr.net/ie10-viewport/1.0.0/ie10-viewport.min.js"></script>-->
-<#--<script src="//cdn.jsdelivr.net/jquery/1.12.1/jquery.min.js"></script>-->
-<#--<script src="//cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+<script src="//cdn.jsdelivr.net/ie10-viewport/1.0.0/ie10-viewport.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery/1.12.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
