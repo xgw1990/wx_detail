@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">.gradle
+  <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" group="wx_detail/api" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/api_main.iml" group="wx_detail/api" />
@@ -12,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="wx_detail/web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="wx_detail/web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail.iml" group="wx_detail" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail_main.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail_main.iml" group="wx_detail" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail_test.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail_test.iml" group="wx_detail" />
     </modules>
   </component>
 </project>
