@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectModuleManager">
+  <component name="ProjectModuleManager">.gradle
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" group="api" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/api_main.iml" group="api" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_test.iml" filepath="$PROJECT_DIR$/.idea/modules/api_test.iml" group="api" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao.iml" filepath="$PROJECT_DIR$/.idea/modules/dao.iml" group="dao" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_main.iml" group="dao" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_test.iml" group="dao" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" group="web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api.iml" filepath="$PROJECT_DIR$/.idea/modules/api.iml" group="wx_detail/api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_main.iml" filepath="$PROJECT_DIR$/.idea/modules/api_main.iml" group="wx_detail/api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api_test.iml" filepath="$PROJECT_DIR$/.idea/modules/api_test.iml" group="wx_detail/api" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao.iml" filepath="$PROJECT_DIR$/.idea/modules/dao.iml" group="wx_detail/dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_main.iml" group="wx_detail/dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dao_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dao_test.iml" group="wx_detail/dao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web.iml" filepath="$PROJECT_DIR$/.idea/modules/web.iml" group="wx_detail/web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/web_main.iml" group="wx_detail/web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/web_test.iml" group="wx_detail/web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wx_detail.iml" filepath="$PROJECT_DIR$/.idea/modules/wx_detail.iml" group="wx_detail" />
     </modules>
   </component>
 </project>
