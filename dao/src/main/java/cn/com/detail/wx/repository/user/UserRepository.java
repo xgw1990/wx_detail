@@ -1,8 +1,10 @@
-package cn.com.detail.wx.repository;
+package cn.com.detail.wx.repository.user;
 
 import cn.com.detail.wx.model.user.Customer;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.Optional;
 
 /**
  * Created by Administrator on 2018/8/10.
@@ -11,8 +13,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @Date: 2018/8/10 14:36
  * @Descriphion:
  */
-public interface UserRepository extends PagingAndSortingRepository<Customer, Long>,JpaSpecificationExecutor<Customer> {
+public interface UserRepository extends  PagingAndSortingRepository<Customer, Long>,JpaSpecificationExecutor<Customer> {
 
-    Customer findById(Long id);  //JpaRepository<Customer , String>
+    Optional<Customer> findById(Long id);  //JpaRepository<Customer , String>
 
 }

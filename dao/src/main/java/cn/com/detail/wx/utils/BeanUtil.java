@@ -1,23 +1,18 @@
 package cn.com.detail.wx.utils;
 
 import cn.com.detail.wx.exception.BizException;
-import cn.com.detail.wx.repository.base.BaseEntitySpecifications;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.ListableBeanFactory;
-import org.springframework.data.jpa.domain.Specifications;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.util.Assert;
-import org.springframework.validation.Errors;
 
 import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Collection;
-import java.util.List;
 
 public class BeanUtil {
 
@@ -262,40 +257,6 @@ public class BeanUtil {
         }
     }
 
-    public static void validateApprovalObjectDuplicateField(Object approvalObject, Errors errors,
-                         String fieldName, String errorMsgKey,
-                         JpaSpecificationExecutor formalRepository,
-                         JpaSpecificationExecutor approvalRepository) {
-        String stringFieldValue = BeanUtil.getFieldValue(approvalObject, fieldName);
-        Specifications nameSpecification = Specifications.where(
-                BaseEntitySpecifications.genericEqual(fieldName, stringFieldValue));
-        Specifications pendingSpecification =
-                Specifications.where(BaseEntitySpecifications.genericEqual("approvalCommon.approvalState", Constants.APPROVAL_STATE_EDIT_PENDING)).
-                        or(BaseEntitySpecifications.genericEqual("approvalCommon.approvalState", Constants.APPROVAL_STATE_NEW_PENDING)).
-                        or(BaseEntitySpecifications.genericEqual("approvalCommon.approvalState", Constants.APPROVAL_STATE_EDIT_REJECT)).
-                        or(BaseEntitySpecifications.genericEqual("approvalCommon.approvalState", Constants.APPROVAL_STATE_NEW_REJECT));
-        Long approvalId = BeanUtil.getFieldValue(approvalObject, "id");
-        pendingSpecification = pendingSpecification.and(BaseEntitySpecifications.idNotEqual(approvalId));
-        // check in submitToApproval approval
-        if (!Checker.isEmpty(stringFieldValue) ) {
-            List approvalList = approvalRepository.
-                    findAll(pendingSpecification.and(nameSpecification));
-            if (approvalList.size() > 0) errors.rejectValue(fieldName, errorMsgKey);
-        }
-        // check in formal
-        Object mainRecord = BeanUtil.getFieldValue(approvalObject, "mainRecord");
-        List formalList = null;
-        if (mainRecord != null) {
-            Long mainRecordId = BeanUtil.getFieldValue(mainRecord, "id");
-            formalList = formalRepository.findAll(
-                    nameSpecification.and(BaseEntitySpecifications.idNotEqual(mainRecordId))
-            );
-
-        } else {
-            formalList = formalRepository.findAll(nameSpecification);
-        }
-        if (formalList.size() > 0) errors.rejectValue(fieldName, errorMsgKey);
-    }
 
     public static Method getMethodSafe(Class<?> clazz, String methodName, Class... parameterTypes) {
         try {

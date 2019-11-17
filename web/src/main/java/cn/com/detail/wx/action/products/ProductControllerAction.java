@@ -2,8 +2,8 @@ package cn.com.detail.wx.action.products;
 
 import cn.com.detail.wx.model.product.Product;
 import cn.com.detail.wx.model.user.Customer;
-import cn.com.detail.wx.repository.ProductRepository;
-import cn.com.detail.wx.repository.UserRepository;
+import cn.com.detail.wx.repository.product.ProductRepository;
+import cn.com.detail.wx.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.beans.Transient;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -33,16 +34,16 @@ public class ProductControllerAction {
 
     @RequestMapping(value = "/product")
     public String getLogIn(){
-        Customer customer = userRepository.findById(1l);
-        System.out.println("the customer is :"+ customer.name);
+        Optional<Customer> customer = userRepository.findById(1l);
+        System.out.println("the customer is :"+ customer.get().name);
         return "product/index";
     }
     @RequestMapping(value = "/product/search")
     public @ResponseBody Map<String, Object> productSearch(@RequestParam (required = false) String name,
                                                            @RequestParam (required = false) Long id){
         Map<String,Object> result = new HashMap<>();
-        Customer customer = userRepository.findById(id);
-        System.out.println("the customer is :"+ customer.name);
+        Optional<Customer> customer = userRepository.findById(id);
+        System.out.println("the customer is :"+ customer.get().name);
         result.put("result", customer);
         result.put("errNum",0);
         return result;

@@ -1,7 +1,7 @@
 package cn.com.detail.wx.action.users;
 
 import cn.com.detail.wx.model.user.Customer;
-import cn.com.detail.wx.repository.UserRepository;
+import cn.com.detail.wx.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

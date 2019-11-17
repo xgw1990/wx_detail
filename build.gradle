@@ -8,13 +8,14 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin"//2.2.0.RELEASE
-        classpath 'org.hidetake:gradle-ssh-plugin'//2.10.0
+        classpath 'org.hidetake:gradle-ssh-plugin:2.10.1'//2.10.0
     }
 }
 
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'net.saliman.properties' version '1.4.6'
+//    id "org.hidetake.ssh" version "2.10.0"
     id 'java'
 }
 
@@ -44,6 +45,7 @@ subprojects {
         maven { url 'https://artifacts.alfresco.com/nexus/content/repositories/public' }
     }
 
+    group = 'smart'
     apply plugin: 'java'
     apply plugin: 'application'
     apply plugin: 'org.springframework.boot'
@@ -55,6 +57,9 @@ subprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
+    mainClassName = 'smart.client.ClientApplication'
+    buildDir=new File(rootProject.getBuildDir().getAbsolutePath())
+    
     tasks.withType(AbstractCompile) {
         options.encoding = 'UTF-8'
     }
@@ -75,9 +80,9 @@ subprojects {
         jvmArgs = ["-Dfile.encoding=UTF-8", "-Dserver.port=8080"]
     }
 
-    bootRepackage {
-        excludeDevtools = true
-    }
+//    bootRepackage {
+//        excludeDevtools = true
+//    }
 
 //*************************************************************************
 // Resource Processing

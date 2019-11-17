@@ -1,4 +1,4 @@
-package cn.com.detail.wx.repository;
+package cn.com.detail.wx.repository.card;
 
 import cn.com.detail.wx.model.user.Customer;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

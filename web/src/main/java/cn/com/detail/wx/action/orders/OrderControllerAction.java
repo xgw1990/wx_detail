@@ -1,7 +1,7 @@
 package cn.com.detail.wx.action.orders;
 
 import cn.com.detail.wx.model.user.Customer;
-import cn.com.detail.wx.repository.UserRepository;
+import cn.com.detail.wx.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.beans.Transient;
+import java.util.Optional;
 
 /**
  * Created by Administrator on 2018/8/9.
@@ -26,8 +27,8 @@ public class OrderControllerAction {
 
     @RequestMapping(value = "/order")
     public String getLogIn(){
-        Customer customer = userRepository.findById(1l);
-        System.out.println("the customer is :"+ customer.name);
+        Optional<Customer> customer = userRepository.findById(1l);
+        System.out.println("the customer is :"+ customer.get().name);
         return "index";
     }
 
